@@ -7,6 +7,7 @@ RUN apt-get install nodejs -y
 RUN npm install -g cypress http-server --unsafe-perm --silent
 RUN cypress install
 RUN cypress verify
+RUN cypress open
 COPY . /app
 WORKDIR /app/public/cypress/videos
 CMD ["http-server", "-p", "80", "-i", "false"]
